@@ -8,6 +8,7 @@ import { InstagramIcon } from "lucide-react";
 
 export const RESUME_DATA = {
   name: "Rishabh Singh",
+  role: "Full Stack Developer",
   initials: "RS",
   location: "FairFax, Virginia, USA | Permanent Resident",
   locationLink: "https://www.google.com/maps/place/Falls+Church,+VA,+USA",
@@ -21,12 +22,12 @@ export const RESUME_DATA = {
     "https://rishabhsingh.com.np",
     webLink: "https://rishabhsingh.com.np",
   summary:
-    "Experienced Full Stack Developer with 2 years in React, React Native, Node.js, PostgreSQL, MongoDB, Docker, and Kubernetes. Skilled in real-time features and performance optimization. Effective collaborator with a strong grasp of modern web practices. Committed to high-quality solutions and continuous learning.",
+    "Experienced Full Stack Developer with 2 years of hands-on experience in React, React Native, Node.js, PostgreSQL, MongoDB, Docker, Kubernetes, and more. Proficient in implementing real-time features, optimizing application performance, and utilizing DevOps tools and practices. Effective collaborator with a strong understanding of modern web development. Committed to delivering high-quality solutions and continuous learning.",
   avatarUrl: "",
   personalWebsiteUrl: "https://rishabhsingh.com.np",
   contact: {
     email: "mail@rishabhsingh.com.np",
-    tel: "999999",
+    tel: "9803451416",
     social: [
       {
         name: "GitHub",
@@ -50,8 +51,8 @@ export const RESUME_DATA = {
       school: "London Metropolitan University",
       degree: "Bsc (Hons) Computing, Grade: First Class Honours",
       courseWork:"Coursework: Operating Systems; Databases; Algorithms; Computer Architecture; Logic and problem solving; Software Engineering; Information Systems; Artificial Intelligence.",
-      start: "2021",
-      end: "2023",
+      start: "01/2021",
+      end: "06/2023",
     },
   ],
   work: [
@@ -64,7 +65,7 @@ export const RESUME_DATA = {
       start: "08/2023",
       end: null,
       description:
-        "Designed and managed a ticketing system with real-time features. Implemented automation with Docker, Kubernetes, Argo CD, GitLab CI/CD, and GitHub Actions. Supported a SaaS product, resolved issues, and performed maintenance. Built RESTful APIs, maintained websites, managed source control, and optimized performance.",
+        "Designed and managed a ticketing system with real-time features, reducing issue resolution time by 30%. Implemented automation with Docker, Kubernetes, Argo CD, GitLab CI/CD, and GitHub Actions increasing deployment efficiency by 50%. Supported a SaaS product with 99.9% uptime and resolved issues promptly. Built RESTful APIs and maintained websites, boosting user engagement by 25%. Optimized performance, achieving a 35% reduction in load times.",
     },
     {
       company: "Featherwebs",
@@ -82,8 +83,9 @@ export const RESUME_DATA = {
   skills: [
     "JavaScript",
     "TypeScript",
-    "GO",
+    "Python",
     "React/Next.js/React-Native",
+    "Redux",
     "MongoDB/PostgresSQL",
     "Prisma",
     "Node.js",
@@ -97,6 +99,17 @@ export const RESUME_DATA = {
     "Jira",
    
   ],
+  softSkills: [
+    "Communication",
+    "Team work and Collaboration",
+    "Organization",
+    "Problem Solving",
+    "Attention to detail",
+    "Time management",
+    "Emotional intelligence",
+    "Adaptability",
+
+  ],
   projects: [
     {
       title: "Support Desk",
@@ -109,9 +122,11 @@ export const RESUME_DATA = {
         "MongoDB",
         "Nginx",
         "Docker",
+        "Git",
+        "GitHub Actions",
       ],
       description:
-        "A webapp for ticketing, real-time updates, client tracking, analytics, chat, notifications, and more.",
+        "A cross-platform solution for web and mobile offering ticketing, real-time updates, client tracking, analytics, chat, notifications, and more.",
       logo: ParabolLogo,
       link: {
         label: "github.com",
@@ -133,7 +148,7 @@ export const RESUME_DATA = {
       logo: EvercastLogo,
       link: {
         label: "#",
-        href: "#",
+        href: "",
       },
     },
     {
@@ -150,7 +165,26 @@ export const RESUME_DATA = {
       logo: ConsultlyLogo,
       link: {
         label: "#",
-        href: "#",
+        href: "",
+      },
+    },
+    {
+      title: "Spam Detection",
+      techStack: [
+        "University Project",
+        "React",
+        "Vite",
+        "TailwindCSS",
+        "Python",
+        "Jupyter Notebook",
+        "Fast API",
+        "AI",
+      ],
+      description: "A web app that detects spam using machine learning algorithms like SVM, KNN, and Naive Bayes. It takes text input and classifies it as spam or not spam, leveraging Microservice architecture.",
+      logo: ConsultlyLogo,
+      link: {
+        label: "Spam Detection",
+        href: "https://github.com/Rish4bh0/Spam-mail-detection-web-app",
       },
     },
    

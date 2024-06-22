@@ -20,9 +20,26 @@ export default function Page() {
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
+            <h1 className="inline-flex items-center justify-center gap-x-1 leading-none text-2xl font-bold">
+            <a className="hover:underline" href={RESUME_DATA.name}>
+                        {RESUME_DATA.name}
+                      </a>
+
+                      <span className="inline-flex gap-x-1">
+                      
+                          <Badge
+                            variant="secondary"
+                            className="align-middle text-xs print:text-[9px] print:leading-tight print:px-1 print:py-0.5"
+                           
+                          >
+                            {RESUME_DATA.role}
+                          </Badge>
+                      
+                      </span>
+            </h1>
+            
             {/*
-             <p className="max-w-full text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
+           <p className="max-w-full text-pretty font-mono text-sm text-muted-foreground print:text-[11px]">
               {RESUME_DATA.about}
             </p>
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
@@ -132,7 +149,7 @@ export default function Page() {
                 </a>
               ) : null}
               {RESUME_DATA.website ? (
-                <a href={`web:${RESUME_DATA.website}`} className="inline-flex items-center gap-x-1">
+                <a href={RESUME_DATA.webLink} className="inline-flex items-center gap-x-1">
                   <NetworkIcon className="size-3"/>
                   <span >{RESUME_DATA.website}</span>
                 </a>
@@ -148,7 +165,7 @@ export default function Page() {
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground print:text-[10px]">
+          <p className="max-w-full text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
             {RESUME_DATA.summary}
           </p>
         </Section>
@@ -168,7 +185,7 @@ export default function Page() {
                         {work.badges.map((badge) => (
                           <Badge
                             variant="secondary"
-                            className="align-middle text-xs print:text-[8px] print:leading-tight print:px-1 print:py-0.5"
+                            className="align-middle text-xs print:text-[9px] print:leading-tight print:px-1 print:py-0.5"
                             key={badge}
                           >
                             {badge}
@@ -176,7 +193,7 @@ export default function Page() {
                         ))}
                       </span>
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="text-sm text-gray-500 print:text-[12px]">
                       {work.start} - {work.end ?? "Present"}
                     </div>
                   </div>
@@ -185,7 +202,7 @@ export default function Page() {
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-xs print:text-[10px]">
+                <CardContent className="mt-2 text-xs print:text-[12px]">
                   {work.description}
                 </CardContent>
               </Card>
@@ -196,27 +213,27 @@ export default function Page() {
           <h2 className="text-xl font-bold">Education</h2>
           {RESUME_DATA.education.map((education) => {
             return (
-              <Card key={education.school}>
+              <Card className ="print:text-[30px]" key={education.school}>
                 <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
+                  <div className="flex items-center justify-between gap-x-2 text-base print:text-[12px]">
                     <h3 className="font-semibold leading-none">
                       {education.school}
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="text-sm text-gray-500 print:text-[12px]">
                       {education.start} - {education.end}
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="mt-2 print:text-[12px]">
                   {education.degree && <p className="text-pretty font-mono text-xs text-muted-foreground">{education.degree}</p>}
-                 {education.courseWork && <p className="text-pretty font-mono text-xs text-muted-foreground print:text-[10px]">{education.courseWork}</p>}
+                 {education.courseWork && <p className="text-pretty font-mono text-xs text-muted-foreground print:text-[11px]">{education.courseWork}</p>}
                 </CardContent>
               </Card>
             );
           })}
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Skills</h2>
+          <h2 className="text-xl font-bold">Hard Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
               return (
@@ -227,8 +244,20 @@ export default function Page() {
             })}
           </div>
         </Section>
+        <Section>
+          <h2 className="text-xl font-bold">Soft Skills</h2>
+          <div className="flex flex-wrap gap-1">
+            {RESUME_DATA.softSkills.map((skill) => {
+              return (
+                <Badge className="print:text-[10px]" key={skill}>
+                  {skill}
+                </Badge>
+              );
+            })}
+          </div>
+        </Section>
 
-        <Section className="print-force-same-page scroll-mb-12">
+        <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
