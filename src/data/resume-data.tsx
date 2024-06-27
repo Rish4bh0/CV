@@ -10,7 +10,7 @@ export const RESUME_DATA = {
   name: "Rishabh Singh",
   role: "Full Stack Developer",
   initials: "RS",
-  location: "FairFax, Virginia, USA | Permanent Resident",
+  location: "Falls Church,VA",
   locationLink: "https://www.google.com/maps/place/Falls+Church,+VA,+USA",
   about:
     "Detail-oriented Full Stack Engineer dedicated to building high-quality products.",
@@ -22,7 +22,7 @@ export const RESUME_DATA = {
     "https://rishabhsingh.com.np",
     webLink: "https://rishabhsingh.com.np",
   summary:
-    "Experienced Full Stack Developer with 2 years of hands-on experience in React, React Native, Node.js, PostgreSQL, MongoDB, Docker, Kubernetes, and more. Proficient in implementing real-time features, optimizing application performance, and utilizing DevOps tools and practices. Effective collaborator with a strong understanding of modern web development. Committed to delivering high-quality solutions and continuous learning.",
+    "Full Stack Developer with 2 years' experience in React, React Native, Node.js, PostgreSQL, MongoDB, Docker, and Kubernetes. Proficient in real-time features, performance optimization, and DevOps practices. Strong collaborator committed to delivering high-quality solutions and continuous learning.",
   avatarUrl: "",
   personalWebsiteUrl: "https://rishabhsingh.com.np",
   contact: {
@@ -139,18 +139,22 @@ export const RESUME_DATA = {
         "Side Project",
         "TypeScript",
         "Next.js",
+        "TailwindCSS",
         "Bun",
         "Hono.js",
         "PostgresSQL",
+        "Prisma",
       ],
       description:
         "Finance SaaS platform tracks income, expenses, categorizes transactions, connects to banks, and enhances financial management.",
       logo: EvercastLogo,
       link: {
-        label: "#",
-        href: "",
+        label: "Finance SaaS",
+        href: "https://spamdetection.rishabhsingh.com.np",
       },
     },
+    
+    /*
     {
       title: "Plinko",
       techStack: [
@@ -168,6 +172,7 @@ export const RESUME_DATA = {
         href: "",
       },
     },
+    */
     {
       title: "Spam Detection",
       techStack: [
@@ -180,13 +185,14 @@ export const RESUME_DATA = {
         "Fast API",
         "AI",
       ],
-      description: "A web app that detects spam using machine learning algorithms like SVM, KNN, and Naive Bayes. It takes text input and classifies it as spam or not spam, leveraging Microservice architecture.",
+      description: "A web app that detects spam using machine learning algorithms like SVM, KNN, and Naive Bayes. Leveraging Microservice architecture.",
       logo: ConsultlyLogo,
       link: {
         label: "Spam Detection",
-        href: "https://github.com/Rish4bh0/Spam-mail-detection-web-app",
+        href: "https://spamdetection.rishabhsingh.com.np",
       },
     },
+   
    
   ],
 } as const;

@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-16 md:p-16">
+      <section className="mx-auto w-full max-w-xl space-y-3 bg-white print:space-y-2">
         <div className="flex items-center justify-between">
-          <div className="flex-1 space-y-1.5">
+          <div className="flex-1 space-y-0.5">
             <h1 className="inline-flex items-center justify-center gap-x-1 leading-none text-2xl font-bold">
             <a className="hover:underline" href={RESUME_DATA.name}>
                         {RESUME_DATA.name}
@@ -73,7 +73,7 @@ export default function Page() {
               </a>
             </p>
             */}
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground print:hidden">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
@@ -82,6 +82,7 @@ export default function Page() {
                 <GlobeIcon className="size-3" />
                 {RESUME_DATA.location}
               </a>
+              
             </p>
             <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
             {RESUME_DATA.website ? (
@@ -135,7 +136,15 @@ export default function Page() {
                 </Button>
               ))}
             </div>
-            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex print:text-[12px]">
+            <div className="hidden text-center gap-x-1 font-mono text-sm text-muted-foreground print:flex print:text-[11px]">
+              <a
+                className="inline-flex items-center gap-x-1"
+                href={RESUME_DATA.locationLink}
+                target="_blank"
+              >
+                <GlobeIcon className="size-3" />
+                {RESUME_DATA.location}
+              </a>
               {RESUME_DATA.contact.email ? (
                 <a href={`mailto:${RESUME_DATA.contact.email}`} className="inline-flex items-center gap-x-1">
                    <MailIcon className="size-3" />
@@ -163,21 +172,23 @@ export default function Page() {
           </Avatar>
           */}
         </div>
-        <Section>
-          <h2 className="text-xl font-bold">About</h2>
-          <p className="max-w-full text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
+        
+        <Section className="">
+          <h2 className="text-lg font-bold print:text-[14px]">About</h2>
+          <p className="max-w-full text-pretty font-mono text-sm text-muted-foreground print:text-[11px] ">
             {RESUME_DATA.summary}
           </p>
         </Section>
-        <Section>
-          <h2 className="text-xl font-bold">Work Experience</h2>
+        
+        <Section >
+          <h2 className="text-lg font-bold print:text-[14px]">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
             return (
               <Card key={work.company}>
                 <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
+                  <div className="flex items-center justify-between gap-x-2 text-base ">
                     <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <a className="hover:underline" href={work.link}>
+                      <a className="hover:underline print:text-[12px]" href={work.link}>
                         {work.company}
                       </a>
 
@@ -193,16 +204,16 @@ export default function Page() {
                         ))}
                       </span>
                     </h3>
-                    <div className="text-sm text-gray-500 print:text-[12px]">
+                    <div className="text-sm text-gray-500 print:text-[10px]">
                       {work.start} - {work.end ?? "Present"}
                     </div>
                   </div>
 
-                  <h4 className="font-mono text-sm leading-none print:text-[12px]">
+                  <h4 className="font-mono text-sm leading-none print:text-[11px]">
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-xs print:text-[12px]">
+                <CardContent className="mt-2 text-xs print:text-[11px]">
                   {work.description}
                 </CardContent>
               </Card>
@@ -210,30 +221,30 @@ export default function Page() {
           })}
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Education</h2>
+          <h2 className="text-lg font-bold print:text-[14px]">Education</h2>
           {RESUME_DATA.education.map((education) => {
             return (
-              <Card className ="print:text-[30px]" key={education.school}>
+              <Card className ="print:text-[12px]" key={education.school}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base print:text-[12px]">
-                    <h3 className="font-semibold leading-none">
+                    <h3 className="font-semibold leading-none print:text-[12px]">
                       {education.school}
                     </h3>
-                    <div className="text-sm text-gray-500 print:text-[12px]">
+                    <div className="text-sm text-gray-500 print:text-[10px]">
                       {education.start} - {education.end}
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="mt-2 print:text-[12px]">
-                  {education.degree && <p className="text-pretty font-mono text-xs text-muted-foreground">{education.degree}</p>}
-                 {education.courseWork && <p className="text-pretty font-mono text-xs text-muted-foreground print:text-[11px]">{education.courseWork}</p>}
+                  {education.degree && <p className="text-pretty font-mono  text-xs print:text-[11px] text-muted-foreground">{education.degree}</p>}
+                 {education.courseWork && <p className="text-pretty font-mono  text-muted-foreground text-xs print:text-[11px]">{education.courseWork}</p>}
                 </CardContent>
               </Card>
             );
           })}
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Hard Skills</h2>
+          <h2 className="text-lg font-bold print:text-[14px]">Hard Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
               return (
@@ -245,7 +256,7 @@ export default function Page() {
           </div>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Soft Skills</h2>
+          <h2 className="text-lg font-bold print:text-[14px]">Soft Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.softSkills.map((skill) => {
               return (
@@ -257,8 +268,8 @@ export default function Page() {
           </div>
         </Section>
 
-        <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xl font-bold">Projects</h2>
+        <Section className="print-force-new-page scroll-mb-16 ">
+          <h2 className="text-lg font-bold print:text-[14px]">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
               return (
